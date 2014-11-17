@@ -1,6 +1,12 @@
 from base import Base
 
 class Hive(Base):
+	""" Hive(query,data_resource):
+		query: Hive query in string format
+		data_resource: remote machine you SSH to when executing queries
+
+	Access warning: SSH must be configured for scripting access
+	"""
 
 	CMD = "ssh {data_resource} hive -f {infile} > {outfile}"
 
