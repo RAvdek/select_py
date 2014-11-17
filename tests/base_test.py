@@ -1,6 +1,6 @@
 import unittest
 from os import system as shell
-from select_py import Base
+from select_py.base import Base
 
 class BaseTest(unittest.TestCase):
 	
@@ -20,3 +20,5 @@ class BaseTest(unittest.TestCase):
 		data = Base._output_summary("_test_dir_/a")
 		self.assertEqual(data['line count'],0)
 
+if __name__ == "__main__":
+	unittest.main()
