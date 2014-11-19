@@ -45,9 +45,10 @@ class Base(object):
 		output['line count'] = int(self._shell_exec("wc -l {0}".format(file_path)).split(' ')[0])
 		return output
 
-	def __init__(self, query, data_resource):
+	def __init__(self, query, data_resource, output_file):
 		self.query = query
 		self.data_resource = data_resource
+		self.output_file = output_file
 		self._query_file = self._query_file_name()
 
 	def format(self, *args, **kwargs):
@@ -58,10 +59,9 @@ class Base(object):
 		""" Returns a dictionary with attributes of the query results """
 		return self._output_summary(self.output_file)
 
-	def execute(self, output_file):
+	def execute(self):
 		""" Executes sends the query to data resource and executes.
 		Output is stored to output_file"""
-		self.output_file = output_file
 		# Put contents of query in temporary file
 		temp_query_file = open(self._query_file,'w')
 		temp_query_file.write(self.query)
@@ -71,7 +71,7 @@ class Base(object):
 		try:
 			# format command with input and output file paths
 			cmd = self.CMD.format(infile = self._query_file, \
-				resource = self.data_resource, outfile = output_file)
+				resource = self.data_resource, outfile = self.output_file)
 			# execute cmd via shell
 			self._shell_exec(cmd)
 		finally:

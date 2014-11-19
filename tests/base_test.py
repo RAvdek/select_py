@@ -27,12 +27,12 @@ class BaseTest(unittest.TestCase):
 		shell("rm -rd _test_dir_")
 
 	def test_shell_exec(self):
-		base = Base('a','b')
+		base = Base('a','b','c')
 		data = base._shell_exec("echo _test_dir_/*")
 		self.assertEqual(data, "_test_dir_/_test_file_")
 
 	def test_output_summary(self):
-		base = Base('a','b')
+		base = Base('a','b','c')
 		data = base._output_summary("_test_dir_/_test_file_")
 		self.assertEqual(data['line count'],1)
 
