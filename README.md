@@ -14,6 +14,8 @@ So you don't have to repeat yourself, of course :)
   <li>Handling job error and <a href="http://stackoverflow.com/questions/2362229/how-to-supress-hyphens-in-sqlcmd">cleaning the output</a> of a SQL Server job executed via command line is <a href="http://www.experts-exchange.com/Database/MS-SQL-Server/Q_28189009.html">annoying</a>.</li>
 </ul>
 
+Lastly, given any other SQL software which has a command line interface, it should be easy to write an associated child of `select_py.Base` providing the same API as `select_py.Hive` and `select_py.SQLServer`.
+
 Usage
 -----
 
