@@ -29,7 +29,7 @@ class Base(object):
 	def _shell_exec(self,cmd):
 		""" Executes a shell command, cmd. Return output """
 				# execute cmd using subprocess
-		shell_job = Popen(cmd, shell=True, stdout = PIPE, stderr = PIPE)
+		shell_job = Popen(cmd, shell=True, stdout = PIPE)
 		# wait for execution completion and check status
 		exit_status = shell_job.wait()
 		stdout_msg, stderr_msg = shell_job.communicate()
