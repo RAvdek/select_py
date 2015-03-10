@@ -2,10 +2,7 @@
 from time import time
 from subprocess import Popen, PIPE
 from os import system as _shell
-<<<<<<< HEAD
 import os
-=======
->>>>>>> eab978c74baf0b0df48faa1b6514af4029cf3b57
 
 class Base(object):
 	""" Constructor takes the following arguments:
@@ -42,16 +39,6 @@ class Base(object):
 				.format(exit_status,cmd, stderr_msg))
 		return stdout_msg.strip()
 
-<<<<<<< HEAD
-=======
-	def _output_summary(self,file_path):
-		""" Inspects a file """
-		output = dict()
-		# Check some conditions with stat and wc ...
-		output['line count'] = int(self._shell_exec("wc -l {0}".format(file_path)).split(' ')[0])
-		return output
-
->>>>>>> eab978c74baf0b0df48faa1b6514af4029cf3b57
 	def __init__(self, query, data_resource, output_file):
 		self.query = query
 		self.data_resource = data_resource
@@ -64,11 +51,7 @@ class Base(object):
 
 	def output_summary(self):
 		""" Returns a dictionary with attributes of the query results """
-<<<<<<< HEAD
 		return os.stat(self.output_file)
-=======
-		return self._output_summary(self.output_file)
->>>>>>> eab978c74baf0b0df48faa1b6514af4029cf3b57
 
 	def execute(self):
 		""" Executes sends the query to data resource and executes.
@@ -87,10 +70,5 @@ class Base(object):
 			self._shell_exec(cmd)
 		finally:
 			# clean up environment
-<<<<<<< HEAD
 			os.remove(self._query_file)
 			self._tear_down()
-=======
-			self._shell_exec("rm {0}".format(self._query_file))
-			self._tear_down()
->>>>>>> eab978c74baf0b0df48faa1b6514af4029cf3b57
