@@ -6,8 +6,6 @@ A simple Python interface to SQL: Run database queries *locally* and dump result
 Why?
 ----
 
-So you don't have to repeat yourself, of course :)
-
 <ul>
   <li>There's a standard procedure for storing Hive output on my machine (scp a query file to remote server, execute job piping output to text file, scp output file to local machine).</li>
   <li>I use the same flags every time I write scripts calling the <a href="http://msdn.microsoft.com/en-us/library/ms162773.aspx">the SQL Server command line utility</a>.</li>
@@ -18,8 +16,6 @@ Lastly, given any other SQL software which has a command line interface, it shou
 
 Usage
 -----
-
-Currently, `select_py` supports Microsoft SQL Server and Apache Hive. The package was designed to run from a <a href="https://www.cygwin.com/">cygwin shell</a> (and will **not** work on Windows `cmd`).
 
 `select_py.Hive` and `select_py.SQLServer` take the following arguments -- all strings -- upon initialization:
 
@@ -73,8 +69,7 @@ Use `select_py.Hive` to run a `Hive` query from a remote machine and return the 
     >>> hive_job.format(date = str(dt.date.today() - dt.timedelta(days=3)))
     >>> hive_job.execute()
     ... Hive's stderr prints to screen ...
-    >>> hive_job.output_summary()
-    {'line count':11}
+
 
 Warning: *In order for `select_py.Hive` to run properly, your SSH must be configured so that the remote location at which you normally run Hive queries can be <a href="http://www.linuxproblem.org/art_9.html">accessed via SSH without a password/passphrase promt</a>.*
 
