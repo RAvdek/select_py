@@ -3,11 +3,11 @@ from base import Base
 class Impala(Base):
     """ Impala(query, data_resource, output_file) """
 
-    CMD = "ssh {resource} impala-shell -f {infile} -B --print_header -o {outfile}"
+    CMD = "ssh {resource} impala-shell -f {infile} -B --print_header > {outfile}"
 
     def _set_up(self):
         """ scp query file to cluster """
-        self._shel_exec("scp {0} {1}:"\
+        self._shell_exec("scp {0} {1}:"\
             .format(self._query_file, self.data_resource))
 
     def _tear_down(self):
