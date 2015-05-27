@@ -1,7 +1,7 @@
 from base import Base
 
 class Hive(Base):
-	""" Hive(query,data_resource):
+	""" Hive(query,data_resource, output_file):
 		query: Hive query in string format
 		data_resource: remote machine you SSH to when executing queries
 
