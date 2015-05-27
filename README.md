@@ -3,6 +3,8 @@ select_py
 
 A simple Python interface to SQL: Run database queries *locally* and dump results into a tab-delimted text file.
 
+*NEW:* Support for Cloudera Impala.
+
 Why?
 ----
 
@@ -17,7 +19,7 @@ Lastly, given any other SQL software which has a command line interface, it shou
 Usage
 -----
 
-`select_py.Hive` and `select_py.SQLServer` take the following arguments -- all strings -- upon initialization:
+`select_py.Hive`, `select_py.SQLServer`, and `select_py.Impala` take the following arguments -- all strings -- upon initialization:
 
 <table>
   <tr>
