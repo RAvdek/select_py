@@ -4,7 +4,7 @@ import os
 from base import Base
 
 class SQLServer(Base):
-	""" SQLServer(query,data_resource):
+	""" SQLServer(query,data_resource, output_file):
 		query: SQLServer query in string format
 		data_resource: Server name
 
@@ -12,7 +12,7 @@ class SQLServer(Base):
 	to be executed via Cygwin on a Windows machine.
 	"""
 
-	CMD = "cmd /c sqlcmd -S {resource} -i {infile} -s '\t' -W -o {outfile}"
+	CMD = "cmd /c sqlcmd -S {resource} -i {infile} -s '\t' -W > {outfile}"
 
 	def _set_up(self):
 		""" No setup required """
