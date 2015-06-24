@@ -3,8 +3,8 @@
 A simple Python interface to SQL: Launch database queries (from a remote server if needed) and dump results into a tab-delimted text file on your machine.
 
 Typical use-cases:
-- You want to do some QA by hand or debugging on the results of a SQL job. You'll have to edit your SQL a bunch of times, and inspect the results which is easier to do locally.
-- You want to store the results of a Hive job on your machine, so you can load it up in Excel, iPython, etc. for analysis.
+- You want to edit your SQL in an IDE locally.
+- You want to store the results of a query, so you can load it up in Excel, iPython, etc. for analysis.
 
 **NEW:** Support for Cloudera Impala.
 
@@ -28,7 +28,6 @@ They each have the following methods:
 
 |Method|Description|
 |------|-----------|
-<<<<<<< HEAD
 |.format(\*args,\*\*kwargs)|Format the query string, using Python's `string.format()`|
 |.execute()|Execute the query|
 |.output_summary()|Applies [`os.stat`](https://docs.python.org/2/library/os.html#os.stat)) to the output file|
@@ -51,7 +50,6 @@ $ python
 >>> hive_job.format(date = str(dt.date.today() - dt.timedelta(days=3)))
 >>> hive_job.execute()
 ... Hive's stderr prints to screen ...
-<<<<<<< HEAD
 >>> # Let's check that the output file is non-empty
 >>> hive_job.output_summary().st_size
 12345
@@ -62,7 +60,6 @@ $ python
 
 Given any other SQL software which has a command line interface, it should be easy to write an associated child of `select_py.Base` providing the same API. The code for the child will need a custom...
 - `cls.CMD`: A shell command in a string, which will be formatted according to `self.__init__` parameters.
-<<<<<<< HEAD
 - `self._set_up`: Code to be executed before the SQL executes, eg. sending temporary files to a server.
 - `self._tear_down`: Code to be executed after the SQL executes, eg. deleting temporary files.
 
@@ -79,7 +76,6 @@ Given any other SQL software which has a command line interface, it should be ea
 - Add `SQLite` implementation.
 - Add a factory function allowing you to choose the SQL flavor.
 - Make a [docopt](http://docopt.org/)-powered CLI
-<<<<<<< HEAD
 - Set headers as default in `Hive`
 - Rename `resource` arg as `server` in `__init__`
 - Add the usual packaging with setup tools.
