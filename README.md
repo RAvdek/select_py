@@ -4,7 +4,7 @@ A simple Python interface to SQL: Launch database queries (from a remote server 
 
 Typical use-cases:
 - You want to edit your SQL in an IDE locally.
-- You want to store the results of a query, so you can load it up in Excel, iPython, etc. for analysis.
+- You want to store the results of a query in a CSV, so you can load it up in Excel, iPython, etc. for analysis.
 
 **NEW:** Support for Cloudera Impala.
 
@@ -30,7 +30,7 @@ They each have the following methods:
 |------|-----------|
 |.format(\*args,\*\*kwargs)|Format the query string, using Python's `string.format()`|
 |.execute()|Execute the query|
-|.output_summary()|Applies [`os.stat`](https://docs.python.org/2/library/os.html#os.stat)) to the output file|
+|.output_summary()|Applies [`os.stat`](https://docs.python.org/2/library/os.html#os.stat) to the output file|
 
 Here's a simple example:
 
