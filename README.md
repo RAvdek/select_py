@@ -56,8 +56,6 @@ $ python
 >>> hive_job.output_summary().st_size
 12345
 >>> # Hooray!
-=======
->>>>>>> 089d4ced6d60ccb5abf19ae06d4ea6954b68ba90
 ```
 
 ## Want to write your own API for a different SQL engine?
@@ -67,10 +65,6 @@ Given any other SQL software which has a command line interface, it should be ea
 <<<<<<< HEAD
 - `self._set_up`: Code to be executed before the SQL executes, eg. sending temporary files to a server.
 - `self._tear_down`: Code to be executed after the SQL executes, eg. deleting temporary files.
-=======
-- `self._set_up`: Code to be executed before the SQL executes, eg. 
-- `self._tear_down`: Code to be executed after the SQL executes, eg. cleaning up files.
->>>>>>> 089d4ced6d60ccb5abf19ae06d4ea6954b68ba90
 
 ## (potential) Issues
 
@@ -89,5 +83,3 @@ Given any other SQL software which has a command line interface, it should be ea
 - Set headers as default in `Hive`
 - Rename `resource` arg as `server` in `__init__`
 - Add the usual packaging with setup tools.
-=======
->>>>>>> 089d4ced6d60ccb5abf19ae06d4ea6954b68ba90
