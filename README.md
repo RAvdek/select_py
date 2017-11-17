@@ -1,5 +1,7 @@
 # `select_py`
 
+**WARNING**: I wrote this a long time ago and it does not represent my current abilities :D
+
 A simple Python interface to SQL: Launch database queries (from a remote server if needed) and dump results into a tab-delimted text file on your machine.
 
 Typical use-cases:
